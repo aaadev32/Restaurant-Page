@@ -12,14 +12,30 @@ body {
 
 #header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgba(36, 85, 5, 0.9);
     height: 55px;
 }
 
 #header>h2 {
     margin: 0;
+}
+
+#nav-container {
+    display: flex;
+}
+
+.nav-tabs {
+    margin: 12px;
+    padding: 4px;
+}
+.nav-tabs:hover{
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #e6e7a1;
+    opacity: .85;
+
 }
 
 #content {
