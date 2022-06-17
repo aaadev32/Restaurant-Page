@@ -1,5 +1,6 @@
 import scene from './restaurant.jpg';
 import './style.css'
+import eats from './eats.png';
 
 function header() {
     const contentDiv = document.getElementById('content');
@@ -54,7 +55,6 @@ function header() {
 function background() {
     const div = document.createElement('div');
 
-    //background
     const newImg = new Image();
     newImg.src = scene;
     div.id = 'background';
@@ -77,12 +77,25 @@ const generateTab = (() => {
         homeContainer.id = 'home-container';
         document.getElementById('content').appendChild(homeContainer);
 
-        for (let i = 0; i < 9; i++) {
-            let cell = document.createElement('div');
-            cell.className = 'home-grid';
-            cell.id = `grid-${i}`;
-            document.getElementById('home-container').appendChild(cell);
-        }
+
+
+        let banner = document.createElement('h1');
+        banner.textContent = 'Callisto\'s Fine Dinery';
+
+        let about = document.createElement('h3');
+        about.textContent = 'serving the finest mediterranean style foods since 1986'
+
+        let uberDeal = document.createElement('div');
+        uberDeal.textContent = 'get 5$ off your first take out order with '
+        uberDeal.id = 'uber-deal';
+        let uberEats = new Image();
+        uberEats.src = eats;
+        let address = document.createElement('h3');
+        address.textContent = 'Address: Porky Pine rd 35590 N'
+
+        document.getElementById('home-container').append(banner, about, uberDeal, address);
+        document.getElementById('uber-deal').appendChild(uberEats);
+
     }
 
     const menu = () => {
