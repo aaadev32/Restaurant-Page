@@ -59,6 +59,7 @@ body {
     border-radius: 5px;
 }
 
+
 #uber-deal {
     display: flex;
     margin: 10px;
@@ -74,6 +75,19 @@ body {
 
 #uber-deal>img:hover {
     cursor: pointer;
+}
+
+#menu-container {
+    display: grid;
+    grid-template:
+        'ap ss' 1fr
+        'sp sp' 2fr
+        'dr ds' 1fr;
+
+}
+
+#specials-container {
+    margin: auto;
 }
 
 #background {
