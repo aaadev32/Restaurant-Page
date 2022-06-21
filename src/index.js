@@ -36,20 +36,20 @@ function header() {
         generateTab.menu();
     }
 
-    const contactTab = document.createElement('div');
-    contactTab.textContent = 'Contact';
-    contactTab.className = 'nav-tabs';
-    contactTab.id = 'contact-tab';
-    contactTab.onclick = function () {
+    const aboutTab = document.createElement('div');
+    aboutTab.textContent = 'About';
+    aboutTab.className = 'nav-tabs';
+    aboutTab.id = 'about-tab';
+    aboutTab.onclick = function () {
         while (contentDiv.firstChild) {
             contentDiv.removeChild(contentDiv.firstChild);
         }
-        generateTab.contact();
+        generateTab.about();
     }
 
     console.log(homeTab);
 
-    document.getElementById('nav-container').append(homeTab, menuTab, contactTab);
+    document.getElementById('nav-container').append(homeTab, menuTab, aboutTab);
 }
 
 function background() {
@@ -83,7 +83,7 @@ const generateTab = (() => {
         banner.textContent = 'Callisto\'s Fine Dinery';
 
         let about = document.createElement('h3');
-        about.textContent = 'open monday - saturday, 8am - 8pm'
+        about.textContent = 'open monday - saturday, 2pm - 10pm'
 
         let uberDeal = document.createElement('div');
         uberDeal.textContent = 'get 5$ off your first take out order with '
@@ -91,7 +91,7 @@ const generateTab = (() => {
         let uberEats = new Image();
         uberEats.src = eats;
         let address = document.createElement('h3');
-        address.textContent = 'Address: Porky Pine rd 3590 N'
+        address.textContent = 'Address: Sequoia rd 3590 N'
 
         document.getElementById('home-container').append(banner, about, uberDeal, address);
         document.getElementById('uber-deal').appendChild(uberEats);
@@ -218,21 +218,25 @@ const generateTab = (() => {
 
     }
 
-    const contact = () => {
-        const homeContainer = document.createElement('div');
-        homeContainer.id = 'contact-container';
-        document.getElementById('content').appendChild(homeContainer);
+    const about = () => {
+        const aboutContainer = document.createElement('div');
+        aboutContainer.id = 'about-container';
+        document.getElementById('content').appendChild(aboutContainer);
 
-        for (let i = 0; i < 9; i++) {
-            let cell = document.createElement('div');
-            cell.className = 'contact-grid';
-            cell.id = `grid-${i}`;
-            document.getElementById('contact-container').appendChild(cell);
+        for (let i = 0; i < 3; i++) {
+            let infoItem = document.createElement('div');
+            infoItem.className = 'about-line';
+            infoItem.id = `line-${i}`;
+            document.getElementById('about-container').appendChild(infoItem);
         }
-    }
+
+        document.getElementById(`line-0`).textContent= 'Over the years, Callistos\'s has continued to evolve. The deli was replaced with a dining counter, the linen tablecloths gave way to casual vinyl and then to rustic wood, and a children\'s menu was added. In 2005, Callisto\'s received an extensive interior remodel, giving it a more Tuscan feel. Most recently in 2017 Paolo\'s updated it\'s look with new flooring, paint, tabletops and window treatments. Reflecting a clean modern aesthetic and the authentic Italian style of his cooking.'
+        document.getElementById(`line-1`).textContent= `Throughout the years, the heart of Callisto's has remained Callisto's and his cooking. Callisto's love of cooking shows in each dish he creates. If he could cook all day, with no phone calls, paperwork, ordering, staffing or cleaning, he would consider it a perfect day - well, maybe throw in a break for a Mariner's game, a long run, and family time with son Jordon and daughter Kaylene! Most of Callisto's hours are joyfully spent in the kitchen preparing fresh mouth-watering meals for his guests. He loves the open kitchen because he can chat with guests as he works. He never tires of hearing "It smells so good in here!"`
+        document.getElementById(`line-2`).textContent= `Catering, cooking classes, wine dinners and special holiday menus are just a few of the things Callisto offers to his customers. Please say "hello" or wave to Callisto when you come in. Callisto is grateful to have such a wonderful and dedicated pastry chef, Judy Melbourne. The staff (many with 15+ years at Callisto's) enjoys meeting and getting to know the many wonderful customers and takes pride in serving them. Callisto thanks each of you for choosing to dine at Callisto's.`
+    }   
 
 
-    return { home, menu, contact };
+    return { home, menu, about };
 
 })();
 document.body.appendChild(content(), header(), background(), footer());
