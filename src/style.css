@@ -86,7 +86,7 @@ body {
     display: grid;
     background-color: rgba(27, 27, 27, 0.7);
     color: white;
-    width: 70%;
+    width: 50%;
     grid-template:
         'ap ss' 1fr
         'ds dr' 2fr

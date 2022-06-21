@@ -67,8 +67,7 @@ function content() {
     const div = document.createElement('div');
 }
 
-function footer() {
-}
+
 
 const generateTab = (() => {
 
@@ -230,7 +229,7 @@ const generateTab = (() => {
             document.getElementById('about-container').appendChild(infoItem);
         }
 
-        document.getElementById(`line-0`).textContent= 'Over the years, Callistos\'s has continued to evolve. The deli was replaced with a dining counter, the linen tablecloths gave way to casual vinyl and then to rustic wood, and a children\'s menu was added. In 2005, Callisto\'s received an extensive interior remodel, giving it a more Tuscan feel. Most recently in 2017 Paolo\'s updated it\'s look with new flooring, paint, tabletops and window treatments. Reflecting a clean modern aesthetic and the authentic Italian style of his cooking.'
+        document.getElementById(`line-0`).textContent= 'Over the years, Callistos\'s has continued to evolve. The deli was replaced with a dining counter, the linen tablecloths gave way to casual vinyl and then to rustic wood, and a children\'s menu was added. In 2005, Callisto\'s received an extensive interior remodel, giving it a more Tuscan feel. Most recently in 2017 Callisto\'s updated it\'s look with new flooring, paint, tabletops and window treatments. Reflecting a clean modern aesthetic and the authentic Italian style of his cooking.'
         document.getElementById(`line-1`).textContent= `Throughout the years, the heart of Callisto's has remained Callisto's and his cooking. Callisto's love of cooking shows in each dish he creates. If he could cook all day, with no phone calls, paperwork, ordering, staffing or cleaning, he would consider it a perfect day - well, maybe throw in a break for a Mariner's game, a long run, and family time with son Jordon and daughter Kaylene! Most of Callisto's hours are joyfully spent in the kitchen preparing fresh mouth-watering meals for his guests. He loves the open kitchen because he can chat with guests as he works. He never tires of hearing "It smells so good in here!"`
         document.getElementById(`line-2`).textContent= `Catering, cooking classes, wine dinners and special holiday menus are just a few of the things Callisto offers to his customers. Please say "hello" or wave to Callisto when you come in. Callisto is grateful to have such a wonderful and dedicated pastry chef, Judy Melbourne. The staff (many with 15+ years at Callisto's) enjoys meeting and getting to know the many wonderful customers and takes pride in serving them. Callisto thanks each of you for choosing to dine at Callisto's.`
     }   
@@ -239,4 +238,4 @@ const generateTab = (() => {
     return { home, menu, about };
 
 })();
-document.body.appendChild(content(), header(), background(), footer());
+document.body.appendChild(content(), header(), background());
